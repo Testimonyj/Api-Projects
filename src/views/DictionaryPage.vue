@@ -104,6 +104,8 @@
             console.log('Result', this.result, 'Audio', this.searchTerm)
             this.Loading = false;
             // this.loadingTimeout = false;
+            this.displayMessage = false;
+
           })
           .catch(error => {
             console.error('Problem receiving dictionary data', error);
@@ -122,8 +124,9 @@
       getAudioURL() {
         if (this.getAudioURL) {
           return this.audioURL
-        } else {
-          return ''
+        } 
+        else {
+          return window.alert('There is no audio for this word')
         }
       }
     }
@@ -140,6 +143,11 @@
   margin-left: auto;
   margin-right: auto;
   height: auto;
+  /* border: 1px solid black; */
+
+  @media screen and (max-width:480px){
+    width: 100%;
+  }
 }
 .loading{
   display: flex;
@@ -150,13 +158,21 @@
   justify-content: center;
   width: 40%;
   top: 20%;
-  padding-top: 250px;
+
+  @media screen and (max-width:480px){
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+  }
+  
 }
 
 .loading p{
   font-size: 40px;
   font-family: arial black;
   font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .span{
@@ -168,19 +184,19 @@
 
 }
 
-/* .fast{
+.fast{
   animation-duration: 0.6s;
   animation-delay: 0s;
-}
+} 
 
 .semi-fast{
   animation-duration: 0.7s;
-  /* animation-delay: 0.5s; 
+   animation-delay: 0.5s; 
 }
 .slow{
   animation-duration: 0.8s;
   animation-delay: 1s;
-} */
+} 
 
 @keyframes bounce{
   0%{
@@ -248,6 +264,11 @@ h4{
   height: 100vh;
   margin: 0 auto;
   padding-top: 100px;
+
+  @media screen and (max-width:480px){
+    width: 90%;
+    
+  }
 }
 
 .search{
@@ -263,12 +284,21 @@ h4{
   margin-right: auto;
   height: auto;
   margin-top: 30px;
+
+  @media screen and (max-width:480px){
+    width: 100%;
+  }
 }
 
 .input-wrap{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width:480px){
+    width: 100%;
+    border: 1px solid black ;
+  }
 }
 
 input{
